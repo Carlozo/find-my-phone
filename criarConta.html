@@ -6,29 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="./estilo/style.css">
+  <link rel="script" type="js" href="./Js/Main.js">
   <title>Inscreva-se no Find My Phone</title>
 </head>
-<body>
-  <div id="parte-esquerda">
-    <div id="container-esquerdo">
-      <form class="form">
-        <p class="titulo">Cadastro:</p>
-        <input class="input-texto" placeholder="E-mail" name="email" type="text" size="22" maxlength="100" required>
-        <input class="input-texto" placeholder="Confirme o e-mail" name="confemail" type="text" size="22" maxlength="100" required>
-        <input class="input-texto" placeholder="Senha"name="senha"type="password" size="22"maxlength="50" required>
-        <input class="input-texto" placeholder="Confirme a senha"name="confsenha"type="password" size="22"maxlength="50" required>
-        <input class="input-botao" type="submit" name="action" value="Inscreva-se" formonovalidate>
+  <body>
+      <div id="parte-esquerda">
+        <div id="container-esquerdo">
+          <form class="form">
+            <p class="titulo">Cadastro:</p>
+            <input class="input-texto" placeholder="E-mail" id="email" type="text" size="22" maxlength="100" required>
+            <input class="input-texto" placeholder="Confirme o e-mail" id="confemail" type="text" size="22" maxlength="100" required>
+            <input class="input-texto" placeholder="Senha" id="senha" type="password" size="22"maxlength="50" required>
+            <input class="input-texto" placeholder="Confirme a senha" id="confsenha"type="password" size="22"maxlength="50" required>
+            <button class="input-botao" onclick="criarConta()" formonovalidate>Se inscrever</button>
 
-        <a class="link-redirecionamento" href="./index.html">Já tenho conta!</a> 
-      </form>
-    </div>
-  </div>
+            <a class="link-redirecionamento" href="./index.html">Já tenho conta!</a> 
+          </form>
+        </div>
+      </div>
 
-  <div id="parte-direita">
-    <div id="container-direito">
-        <img class="icone" src="./img/gps-icon.png" alt="">
-        <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus sed sem a pulvinar. Fusce lorem nisl.</p>
+      <div id="parte-direita">
+        <div id="container-direito">
+            <img class="icone" src="./img/gps-icon.png" alt="">
+            <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus sed sem a pulvinar. Fusce lorem nisl.</p>
+        </div>
     </div>
-</div>
-</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBYmcCOMFB17O7x34N_cfw5Q_lgj-7CxB8",
+        authDomain: "findmyphone-a71d6.firebaseapp.com",
+        projectId: "findmyphone-a71d6",
+        storageBucket: "findmyphone-a71d6.appspot.com",
+        messagingSenderId: "151294500416",
+        appId: "1:151294500416:web:3d8d73b293e7162f3489a5",
+        measurementId: "G-RMYG6021NP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
 </html>
