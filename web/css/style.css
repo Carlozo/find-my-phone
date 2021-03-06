@@ -66,7 +66,7 @@ body{
     padding-top: 100px;
 }
 
-.form input,button{
+.form input, .button{
     display: block;
     font-size: 1.1rem;
 }
