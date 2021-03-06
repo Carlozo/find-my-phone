@@ -11,4 +11,4 @@ Trabalho semestral: Find my phone tem a proposta de ser uma aplicação pwa (Pro
 
 Link da Aplicação: 
 <br>
-<a href="https://findmyphone-etec.herokuapp.com/">https://findmyphone-etec.herokuapp.com/</a>
+<a href="https://projetointegrado-etec2021.herokuapp.com/">https://projetointegrado-etec2021.herokuapp.com/</a>
