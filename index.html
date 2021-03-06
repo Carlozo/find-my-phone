@@ -5,8 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
         <link rel="stylesheet" type="text/css" href="./estilo/style.css">
-        <link rel="script" type="js" href="./Js/Main.js">
+        <script src="./js/Main.js"></script>
         <title>Login Find My Phone</title>
     </head>
     <body>
@@ -16,7 +19,11 @@
                     <p class="titulo">Login:</p>
                     <input class="input-texto" placeholder="E-mail" id="email" type="text" size="22" maxlength="100" required>
                     <input class="input-texto" placeholder="Senha" id="senha" type="password" size="22"maxlength="50" required>
+<<<<<<< HEAD
                     <button class="button" onClick="entrarComConta()" formonovalidate>Entrar</button>
+=======
+                    <button class="input-botao" onClick="entrarComConta()" formonovalidate>Entrar</button>
+>>>>>>> f1655b9f3a7d82a8f8eaf3b5714403ffbba4e980
             
                     <a class="link-redirecionamento" href="./redefinicaoSenha.html">Esqueceu a senha?</a>
                     <a class="link-redirecionamento" href="./criarConta.html">Criar conta</a> 
@@ -36,13 +43,7 @@
                 <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus sed sem a pulvinar. Fusce lorem nisl.</p>
             </div>
         </div>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
-
+        
         <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
