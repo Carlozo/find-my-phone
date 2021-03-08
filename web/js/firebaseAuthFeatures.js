@@ -9,7 +9,7 @@ function logar(){
         .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        window.alert("erro ao entrar na sua conta!");
+        window.alert("senha incorreta ou usuário inexistente!");
      });
 }
 
@@ -21,6 +21,7 @@ function inscreverse(){
   .then((user) => {
     console.log(user);
     window.alert("conta criada com sucesso!");
+    window.location.href = "https://projetointegrado-etec2021.herokuapp.com/index.html";
   })
   .catch((error) => {
     var errorCode = error.code;
