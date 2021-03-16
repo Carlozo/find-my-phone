@@ -5,6 +5,7 @@ function logar(){
     firebase.auth().signInWithEmailAndPassword(entrarEmail, entrarSenha)
         .then((user) => {
         window.alert("conta logada com sucesso!");
+        window.location.href = "https://projetointegrado-etec2021.herokuapp.com/mapa.html";
     })
         .catch((error) => {
         var errorCode = error.code;
