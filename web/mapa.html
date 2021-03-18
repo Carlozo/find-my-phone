@@ -16,8 +16,47 @@
     <title>mapbox posicao atual</title>
 </head>
 <body>
-    <div id="mapa" style="width: 800px; height: 600px;"></div>
-
+    <div id="container-geral">
+        <div id="header">
+            <div id="logo">
+                <p>Logo</p>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="container-mapa">
+        <div id="mapa" style="width: 800px; height: 600px;"></div>
+        <div id="container-cell">
+            <div id="primeiro-cont">
+                <div id="modelo">
+                    <h3>Sansung</h3>
+                    <p>Endereço:</p>
+                    <p>Hora:</p>
+                </div>
+                <div id="foto-cell">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div id="segundo-cont">
+                <p>Tocar</p>
+                <p>Rastrear</p>
+            </div>
+            <div id="terceiro-cont">
+                <div id="foto-user">
+                    <img src="" alt="">
+                </div>
+                <div id="user-dados">
+                    <p>Isa linda maravilhosa</p>
+                    <p>@Carlos_lindo_inteligente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoid2FnbmVybWFycXVlcyIsImEiOiJjanZlZnllNDQwamczNGRwbmM3a3lxN3UyIn0.2IrgrK7peJF9P2oxhDVwTg';
 
