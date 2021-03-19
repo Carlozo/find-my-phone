@@ -7,10 +7,6 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-body{
-    min-width: 770px;
-}
-
 /*partes esquerda, direita e senha*/
 #parte-esquerda{
     height: 100vh;
@@ -214,6 +210,18 @@ img.icone{
     }
     to {
         transform: translateY(0px);
+    }
+}
+
+/*MEDIA SCREEN*/
+@media screen and (max-width:750px){
+
+    #parte-esquerda{
+        width: 100%;
+    }
+
+    #parte-direita{
+        width: 100%;
     }
 }
 

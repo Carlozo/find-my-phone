@@ -1,5 +1,6 @@
 create table usuario (
  id int primary key,
- telefone varchar(11) unique,
- email varchar(25) unique
+ nome varchar (40),
+ email varchar(25) unique,
+ telefone varchar(11) unique
 );

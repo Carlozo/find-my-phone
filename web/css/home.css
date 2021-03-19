@@ -113,3 +113,16 @@ li, a{
 #user-dados{
 
 }
+
+/*---FOOTER---*/
+#footer{
+    height: 5vh;
+    align-items: center;
+    text-align: center;
+    background: rgb(22, 22, 22);
+    color: white;
+}
+
+#footer p{
+    padding-top: 5px;
+}
