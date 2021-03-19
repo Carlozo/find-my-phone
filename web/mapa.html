@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
+    <link rel="stylesheet" href="./css/home.css" type="text/css">
   
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
@@ -19,39 +20,47 @@
     <div id="container-geral">
         <div id="header">
             <div id="logo">
-                <p>Logo</p>
+                <h2>Logo</h2>
             </div>
             <div id="menu">
                 <ul>
-                    <li><a href="">Sair</a></li>
+                    <li><a href="./index.html">Sair</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div id="container-mapa">
-        <div id="mapa" style="width: 800px; height: 600px;"></div>
-        <div id="container-cell">
-            <div id="primeiro-cont">
-                <div id="modelo">
-                    <h3>Sansung</h3>
-                    <p>Endereço:</p>
-                    <p>Hora:</p>
+    
+        <div id="container-mapa">
+            <div id="mapa" style="width: 100%; height: 600px;"></div>
+            <div id="container-cell">
+                <div id="primeiro-cont">
+                    <div id="modelo">
+                        <h3>Motorola G4 Plus</h3>
+                        <hr style="margin-bottom: 10px;">
+                        <p class="titulo2">Endereço: <p class="titulo3">Rua Professor Andes Marques</p></p>
+                        <p class="titulo2">Hora: <p class="titulo3">16:55</p></p>
+                    </div>
+                    <div id="foto-cell">
+                        <img src="./img/icone celular.png" alt="icone celular" style="width: 200px;">
+                    </div>
                 </div>
-                <div id="foto-cell">
-                    <img src="" alt="">
+                <div id="segundo-cont">
+                    <div class="funcao-cell">
+                        <img src="" alt="">
+                        <p class="titulo2">Tocar</p>
+                    </div>
+                    <div class="funcao-cell">
+                        <img src="" alt="">
+                        <p class="titulo2">Rastrear</p>
+                    </div>
                 </div>
-            </div>
-            <div id="segundo-cont">
-                <p>Tocar</p>
-                <p>Rastrear</p>
-            </div>
-            <div id="terceiro-cont">
-                <div id="foto-user">
-                    <img src="" alt="">
-                </div>
-                <div id="user-dados">
-                    <p>Isa linda maravilhosa</p>
-                    <p>@Carlos_lindo_inteligente</p>
+                <div id="terceiro-cont">
+                    <div id="foto-user">
+                        <img src="./img/user icon.png" alt="user icon" style="width: 85px; padding: 10px 0px;">
+                    </div>
+                    <div id="user-dados">
+                        <p class="titulo2">Miguel Santos Souza</p>
+                        <p class="titulo3">miguel@gmail.com</p>
+                    </div>
                 </div>
             </div>
         </div>
