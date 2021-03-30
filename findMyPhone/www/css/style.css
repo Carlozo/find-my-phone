@@ -1,0 +1,227 @@
+/*import da fonte*/ @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+/*reiniciando as margens*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/*partes esquerda, direita e senha*/
+#parte-esquerda{
+    height: 100vh;
+    width: 50%;
+    float: left;
+    background: black;
+    color: #fff;
+}
+
+#container-esquerdo{
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+#parte-direita{
+    height: 100vh;
+    width: 50%;
+    float: right;
+}
+
+#container-direito{
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+#parte-senha{
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    background: black;
+}
+
+#container-senha{
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+/*=======PARTE ESQUERDA======*/
+/*formulário*/
+.titulo{
+    margin: 40px auto 40px auto;
+    font-size: 1.2rem;
+    text-align: center;  
+    animation: anim-titulo 1s linear;
+}
+
+.form{
+    padding-top: 100px;
+}
+
+.form input, .button{
+    display: block;
+    font-size: 1.1rem;
+}
+
+.form .input-texto{
+    margin: 15px auto 15px auto;
+    padding: 10px;
+    width: 60%;
+    background: transparent;
+    color: #fff;
+    border: 1px solid white;
+    animation: anim-form 2s linear;
+}
+
+.form .button{
+    margin: 25px auto 25px auto;
+    padding: 10px 70px 10px 70px;
+    background: rgb(22, 22, 22);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    animation: anim-form 2s linear;
+}
+
+/*links*/
+.link-redirecionamento{
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    animation: anim-form 2s linear;
+}
+
+.link-sociais{
+    margin: 0 auto;
+    padding-top: 20px;
+    align-items: center;
+    text-align: center;
+    animation: anim-form 2s linear;
+}
+
+.link-sociais li{
+    color: white;
+    list-style: none;
+    cursor: pointer;
+    display: inline;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 10px 5px;
+}
+
+.link-sociais li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 3px;
+}
+
+/*======PARTE DIREITA======*/   
+img.icone{
+    width: 50%;
+    padding-top: 120px;
+    animation: infinity-img 5s linear infinite;
+    box-shadow: 0px 8px 0px black;
+}
+
+.texto{
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 15px;
+    animation: anim-texto 2.5s linear;
+
+}
+
+/*======REDEFINIR SENHA======*/
+.dica{
+    animation: anim-dica 3s linear;
+}
+
+/*======ANIMAÇÕES=======*/
+.input-texto:hover{
+    padding-right: 5px;
+}
+
+.input-botao:hover{
+    background: #fff;
+    color: black;
+}
+
+.link-redirecionamento:hover{
+    text-decoration: underline;
+}
+
+.link-sociais li a:hover{
+    color: #64798a;
+}
+
+.texto:hover{
+    padding-left: 10px;
+}
+
+@keyframes anim-titulo{
+    from {
+        transform: translateY(-3000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes anim-form{
+    from {
+        transform: translateY(-3000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes infinity-img{
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes anim-texto{
+    0% { opacity: 0; }
+    100% { opacity: 1; } 
+}
+
+@keyframes anim-dica{
+    from {
+        transform: translateY(-3000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+/*MEDIA SCREEN*/
+@media screen and (max-width:750px){
+
+    #parte-esquerda{
+        width: 100%;
+    }
+
+    #parte-direita{
+        width: 100%;
+    }
+}
+
