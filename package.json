@@ -1,0 +1,22 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Trabalho semestral: Find my phone tem a proposta de ser uma aplicação pwa (Progressive Web App) para localização do seu smartphone.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlozo/a.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlozo/a/issues"
+  },
+  "homepage": "https://github.com/Carlozo/a#readme",
+  "dependencies": {
+    "firebase": "^8.3.1"
+  }
+}

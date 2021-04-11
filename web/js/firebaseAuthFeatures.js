@@ -1,14 +1,11 @@
-//import firebase from "firebase/app";
-//import "firebase/auth";
 
 function entrarFacebook(){
-  var provider = new firebase.auth.FacebookAuthProvider();
+  let provider = new firebase.auth.FacebookAuthProvider();
 
-  firebase
-  .auth()
+  firebase.auth()
   .signInWithRedirect(provider)
   .then((result) => {
-    /** @type {firebase.auth.OAuthCredential} */
+    /* @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
 
     // The signed-in user info.
@@ -35,13 +32,15 @@ function entrarFacebook(){
 
 function entrarGoogle(){
 
-  var provider = new firebase.auth.GoogleAuthProvider();
+  let provider = new firebase.auth.GoogleAuthProvider();
 
-  window.alert(provider);
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  firebase.auth().languageCode = 'it';
+
   firebase.auth()
-  .signInWithRedirect(provider)
+  .signInWithPopup(provider)
   .then((result) => {
-    /** @type {firebase.auth.OAuthCredential} */
+    /* @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = credential.accessToken;
