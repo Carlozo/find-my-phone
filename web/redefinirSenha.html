@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="./js/firebaseAuthFeatures.js"></script>
+    <script src="./js/configFirebaseApp.js"></script>
     <title>Find My Phone</title>
 </head>
 <body>
@@ -13,7 +19,7 @@
             <form class="form">
                 <p class="titulo">Redefinir a senha:</p>
                 <input class="input-texto" id="resetEmail" placeholder="Informe o e-mail" name="email" type="text" size="22" maxlength="100" required>
-                <input class=button type="button"  onclick="newPassword()" value="Enviar" formonovalidate>
+                <input class=button type="button"  onclick="newPassword()" value="Enviar">
                 <p class="dica">Um e-mail de verificação será enviado ao email.</p>
                 <p class="dica">Lembre-se de verificar a caixa de spam.</p>
             </form>
