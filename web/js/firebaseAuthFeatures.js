@@ -93,8 +93,6 @@ function inscreverse(){
   });
 }
 
-
-
 function usuarioLogado(){
     try{
         let u = firebase.auth().currentUser;
@@ -102,4 +100,17 @@ function usuarioLogado(){
     }catch(e){
         return e;
     }
+}
+
+function newPassword(){
+  var auth = firebase.auth();
+  var email = document.getElementById("resetEmail").value;
+  
+  auth.sendPasswordResetEmail(email).then(function() {
+    // Email sent.
+    window.alert("E-mail enviado!");
+  }).catch(function(error) {
+    // An error happened.
+    window.alert("E-mail incorreto ou não cadastrado!");
+  });
 }
