@@ -110,7 +110,7 @@ function newPassword(){
     // Email sent.
     window.alert("E-mail enviado!");
   }).catch(function(error) {
-    // An error happened.
+    // An error happened
     window.alert("E-mail incorreto ou não cadastrado!");
   });
 }
