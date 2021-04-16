@@ -1,4 +1,4 @@
-/*var firebaseConfig = {
+var firebaseConfig = {
         apiKey: "AIzaSyDxei5EZl3HamhgU-RHL_PkNT6fswcz87k",
         authDomain: "findmyphone-be2c3.firebaseapp.com",
         projectId: "findmyphone-be2c3",
@@ -11,4 +11,3 @@
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-*/
