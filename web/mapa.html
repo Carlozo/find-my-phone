@@ -7,6 +7,10 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
     <link rel="stylesheet" href="./css/home.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
@@ -20,7 +24,7 @@
     <div id="container-geral">
         <header id="header">
             <div id="logo">
-                <h2>Logo</h2>
+                <h2>FP</h2>
             </div>
             <div id="menu">
                 <ul>
@@ -30,40 +34,37 @@
         </header>
     
         <div id="container-mapa">
-            <div id="mapa" style="width: 100%; height: 558px;"></div>
-            <div id="container-cell">
-                <div id="primeiro-cont">
-                    <div id="modelo">
-                        <h3>Motorola G4 Plus</h3>
-                        <hr style="margin-bottom: 10px;">
-                        <p class="titulo2">Endereço: <p class="titulo3">Rua Professor Andes Marques</p></p>
-                        <p class="titulo2">Hora: <p class="titulo3">16:55</p></p>
-                    </div>
-                    <div id="foto-cell">
-                        <img src="./img/icone celular.png" alt="icone celular" style="width: 200px;">
-                    </div>
+            <div id="mapa" style="width: 100%; height: 558px; overflow: hidden;"></div>
+        </div>
+
+        <div id="container-cell">
+            <div id="primeiro-cont">
+                <div id="modelo">
+                    <h3>Modelo do Celular</h3>
+                    <hr style="margin-bottom: 10px;">
+                    <p class="titulo2">Endereço: <p class="titulo3">Rua Professor Andes Marques</p></p>
+                    <p class="titulo2">Hora: <p class="titulo3">16:55</p></p>
                 </div>
-                <div id="segundo-cont">
-                    <div class="funcao-cell">
-                        <img src="" alt="">
-                        <p class="titulo2">Tocar</p>
-                    </div>
-                    <div class="funcao-cell">
-                        <img src="" alt="">
-                        <p class="titulo2">Rastrear</p>
-                    </div>
-                </div>
-                <div id="terceiro-cont">
-                    <div id="foto-user">
-                        <img src="./img/user icon.png" alt="user icon" style="width: 85px; padding: 10px 0px;">
-                    </div>
-                    <div id="user-dados">
-                        <p class="titulo2">Miguel Santos Souza</p>
-                        <p class="titulo3">miguel@gmail.com</p>
-                    </div>
+                <div id="foto-cell">
+                    <img src="./img/icone celular.png" alt="icone celular" style="width: 200px;">
                 </div>
             </div>
-        </div>
+            <div id="segundo-cont">
+                <div class="funcao-cell">
+                    <button class="button">Tocar</button> 
+                </div>
+                <div class="funcao-cell">
+                    <button class="button">Rastrear</button> 
+                </div>
+            </div>
+            <div id="terceiro-cont">
+                <div id="user-dados">
+                    <p class="titulo2">Miguel Santos Souza</p>
+                    <p class="titulo3">miguel@gmail.com</p>
+                </div>
+            </div>
+        </div> 
+
         <footer id="footer">
             <p>Todos os direitos reservados &copy;</p>
         </footer>
