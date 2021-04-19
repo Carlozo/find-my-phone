@@ -66,7 +66,44 @@ db.collection("users")
             }
         });
 
+        eFx6q1O9C2Wz3lBzW6ZbnRsm0D52
 
+
+//ATUALIZAR DOCUMENTOS
+DocumentReference washingtonRef = db.collection("cities").document("DC");
+
+// Set the "isCapital" field of the city 'DC'
+washingtonRef
+        .update("capital", true)
+        .addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "DocumentSnapshot successfully updated!");
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error updating document", e);
+            }
+        });
+
+
+
+//ATUALIZAR CAMPOS E OBJETOS ALINHADOS
+// Assume the document contains:
+// {
+//   name: "Frank",
+//   favorites: { food: "Pizza", color: "Blue", subject: "recess" }
+//   age: 12
+// }
+//
+// To update age and favorite color:
+db.collection("users").document("frank")
+        .update(
+                "age", 13,
+                "favorites.color", "Red"
+        );
 
 //EXCLUIR DOCUMENTOS
 
