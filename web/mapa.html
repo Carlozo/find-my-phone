@@ -87,24 +87,9 @@
     </div>
 
     <script>
-        /*
-        starting position [lng, lat]
-        latitude: number
-        The latitude as number between -90 and 90.
-
-        longitude: number
-        The longitude as number between -180 and 180. 
-        
-        db.collection("eFx6q1O9C2Wz3lBzW6ZbnRsm0D52").doc("localization")
-            .onSnapshot({
-            // Listen for document metadata changes
-            includeMetadataChanges: true
-            }, (doc) => {
-            // ...
-             });*/
         let lat;
         let lgn;
-        let userId;
+        let userId = "eFx6q1O9C2Wz3lBzW6ZbnRsm0D52";
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
