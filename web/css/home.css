@@ -72,33 +72,13 @@ li, a{
     color: white;
 }
 
-#primeiro-cont{ /*primeiro conteudo*/
-    display: flex;
-    justify-content: space-around;
-    background: rgb(44, 44, 44);
-}
-
-#primeiro-cont h3{
-    padding-top: 10px;
-}
-
-#primeiro-cont h3, #primeiro-cont p{
-    padding-left: 15px;
-}
-
-#modelo, #foto-cell{
-    width: 50%;
-}
-
-#foto-cell img{
-    padding-top: 20px;
-}
-
 #segundo-cont{ /*segundo conteudo*/
     height: 60px;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: space-around;
+    text-align: center;
     background: rgb(51, 51, 51);
 }
 
@@ -125,6 +105,12 @@ li, a{
     font-weight: bold;
 }
 
+.button:hover{
+    background: gray;
+    color: white;
+    transition: 1.5s;
+}
+
 /*---FOOTER---*/
 #footer{
     height: 5vh;
@@ -136,4 +122,43 @@ li, a{
 
 #footer p{
     padding-top: 5px;
+}
+
+/*MEDIA SCREEN*/
+@media screen and (max-width:570px){
+
+    #segundo-cont{
+        display: inline;
+    }
+
+    .funcao-cell{
+        width: 100%;
+    }
+
+    .funcao-cell .button{
+        margin: 5px;
+    }
+
+    #user-dados .titulo3{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:320px){
+
+    #segundo-cont{
+        display: inline;
+    }
+
+    .funcao-cell{
+        width: 100%;
+    }
+
+    .funcao-cell .button{
+        margin: 5px;
+    }
+
+    #user-dados .titulo3{
+        font-size: 8px;
+    }
 }
