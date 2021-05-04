@@ -1,128 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--LINK DO CSS DA PAG-->
-    <link rel="stylesheet" href="./css/home.css" type="text/css">
-    <!--LINK DO MAPBOX-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
-    <!--LINK DO LOGO DA ABA-->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <!--SCRIPTS DO FIREBASE-->
-    <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
-    <script src="./js/configFirebaseApp.js"></script>
-    <script src="./js/firebaseAuthFeatures.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
-    <!--INICIALIZANDO O BANCO DE DADOS-->
-    <script src="./js/configFirebaseDB.js"></script>
-    <!--SCRIPTS DO MAPBOX-->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-    <title>mapbox posicao atual</title>
-</head>
-<body>
-    <div id="container-geral">
-        <header id="header">
-            <div id="logo">
-                <h2>FP</h2>
-            </div>
-            <div id="menu">
-                <ul>
-                    <li><a href="./index.html">Sair</a></li>
-                </ul>
-            </div>
-        </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--LINK DO CSS DA PAG-->
+        <link rel="stylesheet" href="./css/home.css" type="text/css">
+        <!--LINK DO MAPBOX-->
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
+        <!--LINK DO LOGO DA ABA-->
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>mapbox posicao atual</title>
+    </head>
+    <body>
+        <div id="container-geral">
+            <header id="header">
+                <div id="logo">
+                    <h2>FP</h2>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="./index.html">Sair</a></li>
+                    </ul>
+                </div>
+            </header>
 
-        <script>
-            window.alert("aguarde, o mapa aparecerá em instantes.");
-        </script>
-    
-        <div id="container-mapa">
-            <div id="mapa" style="width: 100%; height: 558px; overflow: hidden;"></div>
+            <script>
+                window.alert("aguarde, o mapa aparecerá em instantes.");
+            </script>
+        
+            <div id="container-mapa">
+                <div id="mapa" style="width: 100%; height: 558px; overflow: hidden;"></div>
+            </div>
+
+            <div id="container-cell">
+                <div id="segundo-cont">
+                    <div class="funcao-cell">
+                        <button class="button">Tocar</button> 
+                    </div>
+                    <div class="funcao-cell">
+                        <button class="button">Rastrear</button> 
+                    </div>
+                </div>
+                <div id="terceiro-cont">
+                    <div id="user-dados">
+                        <p class="titulo3">miguel@gmail.com</p>
+                    </div>
+                </div>
+            </div> 
+
+            <footer id="footer">
+                <p>Todos os direitos reservados &copy;</p>
+            </footer>
         </div>
 
-        <div id="container-cell">
-            <div id="segundo-cont">
-                <div class="funcao-cell">
-                    <button class="button">Tocar</button> 
-                </div>
-                <div class="funcao-cell">
-                    <button class="button">Rastrear</button> 
-                </div>
-            </div>
-            <div id="terceiro-cont">
-                <div id="user-dados">
-                    <p class="titulo3">miguel@gmail.com</p>
-                </div>
-            </div>
-        </div> 
-
-        <footer id="footer">
-            <p>Todos os direitos reservados &copy;</p>
-        </footer>
-    </div>
-
-    <script>
-        let lat;
-        let lgn;
-        let userId = "eFx6q1O9C2Wz3lBzW6ZbnRsm0D52";
-
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                var user = firebase.auth().currentUser;
-                userId = user.uid;
-                console.log(userId);
-            } else {
-            
-            }
-        });
-
-        db.collection("localization").where("id", "==", userId)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    lat = doc.data().localizacao.latitude;
-                    lgn = doc.data().localizacao.longitude;
-                    console.log(lat,lgn);
-                    console.log(doc.data());
-                });
-            })
-              .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
-
-
-        mapboxgl.accessToken = 'pk.eyJ1Ijoid2FnbmVybWFycXVlcyIsImEiOiJjanZlZnllNDQwamczNGRwbmM3a3lxN3UyIn0.2IrgrK7peJF9P2oxhDVwTg';
-
-        navigator.geolocation.getCurrentPosition(position => {
-            let instanciaMapa = {
-                container: 'mapa',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [lat,lgn],
-                zoom: 12
-            };
-            let mapa = new mapboxgl.Map(instanciaMapa);
-
-            let marcador = {
-                color: 'red'
-            };
-
-            let posicaoAtual = new mapboxgl.Marker(marcador);
-            posicaoAtual.setLngLat([lat,lgn]);
-            posicaoAtual.addTo(mapa);
-        });
-    </script>
-</body>
+        <!--SCRIPT DO FONTAWESOME-->
+        <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
+        <!--SCRIPTS DO FIREBASE-->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+        <script src="./js/configFirebaseApp.js"></script>
+        <script src="./js/firebaseAuthFeatures.js"></script>
+        <script src="./js/configMapBox.js"></script>
+        <!--INICIALIZANDO O BANCO DE DADOS DO FIREBASE-->
+        <script src="./js/configFirebaseDB.js"></script>
+        <!--SCRIPTS DO MAPBOX-->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+        <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    </body>
 </html>

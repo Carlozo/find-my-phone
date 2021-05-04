@@ -92,16 +92,7 @@ function inscreverse(){
   });
 }
 
-function usuarioLogado(){
-    try{
-        let u = firebase.auth().currentUser;
-        return u.entrarEmail;
-    }catch(e){
-        return e;
-    }
-}
-
-function newPassword(){
+function alterarSenha(){
   let resetEmail = document.getElementById("resetEmail").value;
   
   firebase.auth().sendPasswordResetEmail(resetEmail).then(function() {
@@ -112,3 +103,4 @@ function newPassword(){
     window.alert("E-mail incorreto ou não cadastrado!");
   });
 }
+

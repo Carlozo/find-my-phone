@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--LINK DO CSS DA PAG-->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <!--LINK DO LOGO DA ABA-->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--LINK DO CSS DA PAG-->
+        <link rel="stylesheet" type="text/css" href="./css/crud.css">
+        <!--LINK DO LOGO DA ABA-->
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Find My Phone</title>
+    </head>
+    <body>
+        <div id="parte-esquerda">
+            <div id="container-esquerdo">
+                <form class="form"> 
+                    <h2 class="titulo">Find My Phone</h2>
+                    <p class="titulo">Login:</p>
+                    <input class="input-texto" id="entrarEmail" placeholder="E-mail" name="email" type="text" size="22" maxlength="100" required>
+                    <input class="input-texto" id="entrarSenha" placeholder="Senha"name="senha" type="password" size="22" maxlength="50" required>
+                    <button class="button" type="button" onclick="logar()">Entrar</button>
+            
+                    <a class="link-redirecionamento" href="./redefinirSenha.html">Esqueceu a senha?</a>
+                    <a class="link-redirecionamento" href="./criarConta.html">Criar conta</a> 
+                
+                </form>    
+                <ul class="link-sociais">
+                    <li><a onclick="entrarGoogle();"><i class="fab fa-google"></i></a></li>
+                    <li><a onclick="entrarFacebook();"><i class="fab fa-facebook"></i></a></li>
+                </ul> 
+            </div>
+        </div>
+        
+        <div id="parte-direita">
+            <div id="container-direito">
+                <img class="icone" src="./img/gps-icon.png" alt="ponto de referência mapa">
+                <p class="texto">Baixe Find My Phone no seu dispositivo móvel, conecte sua conta e permita a localização. <a href=""></a> </p>
+            </div>
+        </div>
+    </body>
+
     <!--SCRIPT DO FONTAWESOME-->
     <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
     <!--SCRIPTS DO FIREBASE-->
@@ -19,64 +50,4 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
     <script src="./js/configFirebaseApp.js"></script>
     <script src="./js/firebaseAuthFeatures.js"></script>
-    <title>Find My Phone</title>
-</head>
-<body>
-    <div id="parte-esquerda">
-        <div id="container-esquerdo">
-            <form class="form"> 
-                <h2 class="titulo">Find My Phone</h2>
-                <p class="titulo">Login:</p>
-                <input class="input-texto" id="entrarEmail" placeholder="E-mail" name="email" type="text" size="22" maxlength="100" required>
-                <input class="input-texto" id="entrarSenha" placeholder="Senha"name="senha" type="password" size="22" maxlength="50" required>
-                <button class="button" type="button" onclick="logar()">Entrar</button>
-        
-                <a class="link-redirecionamento" href="./redefinirSenha.html">Esqueceu a senha?</a>
-                <a class="link-redirecionamento" href="./criarConta.html">Criar conta</a> 
-            
-            </form>    
-            <ul class="link-sociais">
-                <li><a onclick="entrarGoogle();"><i class="fab fa-google"></i></a></li>
-                <li><a onclick="entrarFacebook();"><i class="fab fa-facebook"></i></a></li>
-            </ul> 
-        </div>
-    </div>
-    
-    <div id="parte-direita">
-        <div id="container-direito">
-            <img class="icone" src="./img/gps-icon.png" alt="">
-            <p class="texto">Baixe Find My Phone no seu dispositivo móvel, conecte sua conta e permita a localização. <a href=""></a> </p>
-        </div>
-    </div>
-</body>
-
-<script> 
-    var firebaseConfig = {
-        apiKey: "AIzaSyDxei5EZl3HamhgU-RHL_PkNT6fswcz87k",
-        authDomain: "findmyphone-be2c3.firebaseapp.com",
-        projectId: "findmyphone-be2c3",
-        storageBucket: "findmyphone-be2c3.appspot.com",
-        messagingSenderId: "756525455405",
-        appId: "1:756525455405:web:4aa6c5f6bff2e077f800a4",
-        measurementId: "G-J9X54ELH75"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-</script>
-
-<script>
-    firebase.auth().onAuthStateChanged(function(user) {
-        try {
-            var user = firebase.auth().currentUser;
-            var userId = user.uid;
-            console.log(userId);
-        } catch (error) {
-            console.log(error);
-        }
-        });
-
-        window.alert(user);
-</script>
 </html>

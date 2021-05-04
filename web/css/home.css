@@ -36,16 +36,12 @@
     color: white;
 }
 
-#logo{
+#logo, #menu{
     width: 10%;
 }
 
 #logo h2{
     float: right;
-}
-
-#menu{
-    width: 10%;
 }
 
 li, a{
