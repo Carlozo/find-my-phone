@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--LINK DO CSS DA PAG-->
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <!--LINK DO LOGO DA ABA-->
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--LINK DO CSS DA PAG-->
+    <link rel="stylesheet" type="text/css" href="./css/crud.css">
+    <!--LINK DO LOGO DA ABA-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Find My Phone</title>
+  </head>
+  <body>
+    <div id="parte-esquerda">
+      <div id="container-esquerdo">
+        <form class="form">
+          <h2 class="titulo">Find My Phone</h2>
+          <p class="titulo">Cadastro:</p>
+          <input class="input-texto" id="criarEmail" placeholder="E-mail" name="email" type="text" size="22" maxlength="100" required>
+          <!--<input class="input-texto" placeholder="Confirme o e-mail" name="confemail" type="text" size="22" maxlength="100" required>-->
+          <input class="input-texto" id="criarSenha" placeholder="Senha"name="senha"type="password" size="22"maxlength="50" required>
+          <!--<input class="input-texto" placeholder="Confirme a senha"name="confsenha"type="password" size="22"maxlength="50" required>-->
+          <button class="button" type="button" onclick="inscreverse()">Inscrever-se</button>
+
+          <a class="link-redirecionamento" href="./index.html">Já tenho conta!</a> 
+        </form>
+      </div>
+    </div>
+
+    <div id="parte-direita">
+      <div id="container-direito">
+          <img class="icone" src="./img/gps-icon.png" alt="">
+          <p class="texto">Baixe Find My Phone no seu dispositivo móvel, conecte sua conta e permita a localização. <a href=""></a> </p>
+      </div>
+  </div>
+  </body>
+
   <!--SCRIPT DO FONTAWESOME-->
   <script src="https://kit.fontawesome.com/c40b2d583b.js" crossorigin="anonymous"></script>
   <!--SCRIPTS DO FIREBASE-->
@@ -19,30 +46,4 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
   <script src="./js/firebaseAuthFeatures.js"></script>
   <script src="./js/configFirebaseApp.js"></script>
-  
-  <title>Find My Phone</title>
-</head>
-<body>
-  <div id="parte-esquerda">
-    <div id="container-esquerdo">
-      <form class="form">
-        <p class="titulo">Cadastro:</p>
-        <input class="input-texto" id="criarEmail" placeholder="E-mail" name="email" type="text" size="22" maxlength="100" required>
-        <!--<input class="input-texto" placeholder="Confirme o e-mail" name="confemail" type="text" size="22" maxlength="100" required>-->
-        <input class="input-texto" id="criarSenha" placeholder="Senha"name="senha"type="password" size="22"maxlength="50" required>
-        <!--<input class="input-texto" placeholder="Confirme a senha"name="confsenha"type="password" size="22"maxlength="50" required>-->
-        <button class="button" type="button" onclick="inscreverse()">Inscrever-se</button>
-
-        <a class="link-redirecionamento" href="./index.html">Já tenho conta!</a> 
-      </form>
-    </div>
-  </div>
-
-  <div id="parte-direita">
-    <div id="container-direito">
-        <img class="icone" src="./img/gps-icon.png" alt="">
-        <p class="texto">Find My Phone é um projeto de alunos da ETEC da Zona Leste que tem a intenção de te ajudar a encontrar seu celular, de forma sucinta em um design limpo.</p>
-    </div>
-</div>
-</body>
 </html>

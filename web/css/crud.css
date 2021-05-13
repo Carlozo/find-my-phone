@@ -7,7 +7,7 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-/*partes esquerda, direita e senha*/
+/*configuração das partes esquerda, direita e senha*/
 #parte-esquerda{
     height: 100vh;
     width: 50%;
@@ -16,23 +16,18 @@
     color: #fff;
 }
 
-#container-esquerdo{
+#container-esquerdo, #container-direito{
     width: 90%;
+    height: 100%;
     margin: 0 auto;
     align-items: center;
+    text-align: center;
 }
 
 #parte-direita{
     height: 100vh;
     width: 50%;
     float: right;
-}
-
-#container-direito{
-    width: 90%;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
 }
 
 #parte-senha{
@@ -59,7 +54,9 @@
 }
 
 .form{
-    padding-top: 100px;
+    padding-top: 70px;
+    align-items: center;
+    text-align: center;
 }
 
 .form input, .button{
@@ -154,12 +151,19 @@ img.icone{
     color: black;
 }
 
+.button:hover{
+    background: white;
+    color: black;
+    transition: 1.5s;
+}
+
 .link-redirecionamento:hover{
     text-decoration: underline;
 }
 
 .link-sociais li a:hover{
     color: #64798a;
+    transition: 1.5s;
 }
 
 .texto:hover{
