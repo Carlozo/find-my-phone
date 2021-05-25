@@ -1,6 +1,7 @@
+let db = firebase.firestore();
 let lat;
 let lgn;
-let userId = "eFx6q1O9C2Wz3lBzW6ZbnRsm0D52";
+let userId = "G3CCmwCEv4XoE4NdyvZTrZdumxD2";
 
 function usuarioLogado(){
     firebase.auth().onAuthStateChanged(function(user) {
@@ -29,22 +30,3 @@ db.collection("localization").where("id", "==", userId)
     });
 
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoid2FnbmVybWFycXVlcyIsImEiOiJjanZlZnllNDQwamczNGRwbmM3a3lxN3UyIn0.2IrgrK7peJF9P2oxhDVwTg';
-
-navigator.geolocation.getCurrentPosition(position => {
-    let instanciaMapa = {
-        container: 'mapa',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [lat,lgn],
-        zoom: 12
-    };
-    let mapa = new mapboxgl.Map(instanciaMapa);
-
-    let marcador = {
-        color: 'red'
-    };
-
-    let posicaoAtual = new mapboxgl.Marker(marcador);
-    posicaoAtual.setLngLat([lat,lgn]);
-    posicaoAtual.addTo(mapa);
-});
