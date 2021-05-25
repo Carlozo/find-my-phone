@@ -85,7 +85,7 @@
                     let instanciaMapa = {
                         container: 'mapa',
                         style: 'mapbox://styles/mapbox/streets-v11',
-                        center: [lat,lgn],
+                        center: [lgn,lat],
                         zoom: 12
                     };
                     let mapa = new mapboxgl.Map(instanciaMapa);
@@ -95,7 +95,7 @@
                     };
 
                     let posicaoAtual = new mapboxgl.Marker(marcador);
-                    posicaoAtual.setLngLat([lat,lgn]);
+                    posicaoAtual.setLngLat([lgn,lat]);
                     posicaoAtual.addTo(mapa);
                 });
 
