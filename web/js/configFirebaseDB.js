@@ -1,1 +1,1 @@
-var db = firebase.firestore();
+let db = firebase.firestore();
