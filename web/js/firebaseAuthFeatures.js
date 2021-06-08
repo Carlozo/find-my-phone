@@ -104,7 +104,7 @@ function usuarioLogado(){
 
 function newPassword(){
   var auth = firebase.auth();
-  var email = document.getElementById("resetEmail").value;
+  var email = document.getElementById("emailChange").value;
   
   auth.sendPasswordResetEmail(email).then(function() {
     // Email sent.
