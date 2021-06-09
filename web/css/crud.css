@@ -95,30 +95,6 @@
     animation: anim-form 2s linear;
 }
 
-.link-sociais{
-    margin: 0 auto;
-    padding-top: 20px;
-    align-items: center;
-    text-align: center;
-    animation: anim-form 2s linear;
-}
-
-.link-sociais li{
-    color: white;
-    list-style: none;
-    cursor: pointer;
-    display: inline;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    padding: 5px;
-    margin: 10px 5px;
-}
-
-.link-sociais li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 3px;
-}
 
 /*======PARTE DIREITA======*/   
 img.icone{
@@ -159,11 +135,6 @@ img.icone{
 
 .link-redirecionamento:hover{
     text-decoration: underline;
-}
-
-.link-sociais li a:hover{
-    color: #64798a;
-    transition: 1.5s;
 }
 
 .texto:hover{

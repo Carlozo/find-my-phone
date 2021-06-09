@@ -24,6 +24,3 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-function sair() {
-    window.location.href = "index.html";
-}
