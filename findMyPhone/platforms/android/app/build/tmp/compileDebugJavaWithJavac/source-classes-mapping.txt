@@ -1,8 +1,0 @@
-org/apache/cordova/whitelist/WhitelistPlugin.java
- org.apache.cordova.whitelist.WhitelistPlugin
- org.apache.cordova.whitelist.WhitelistPlugin$1
- org.apache.cordova.whitelist.WhitelistPlugin$CustomConfigXmlParser
-br/com/findmyphone/MainActivity.java
- br.com.findmyphone.MainActivity
-br/com/findmyphone/BuildConfig.java
- br.com.findmyphone.BuildConfig

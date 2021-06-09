@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainScreen">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="1400dp"
+        android:layout_height="64dp"
+        android:background="#2C2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/logoutText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="1400dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="141dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/startDeviceButton"
+        android:layout_width="185dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="295dp"
+        android:text="iniciar rastreamento"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="139dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/startDeviceButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_map" />
+
+    <TextView
+        android:id="@+id/logoutText"
+        android:layout_width="83dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="13dp"
+        android:clickable="true"
+        android:onClick="Logout"
+        android:text="Logout"
+        android:textColor="#F5FF0000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
