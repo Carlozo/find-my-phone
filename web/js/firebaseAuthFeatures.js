@@ -66,8 +66,7 @@ function logar(){
 
     firebase.auth().signInWithEmailAndPassword(entrarEmail, entrarSenha)
         .then((user) => {
-        window.alert("conta logada com sucesso!");
-        window.location.href = "https://projetointegrado-etec2021.herokuapp.com/mapa.html";
+        window.location.href = "mapa.html";
     })
         .catch((error) => {
         var errorCode = error.code;
@@ -84,7 +83,7 @@ function inscreverse(){
   .then((user) => {
     console.log(user);
     window.alert("conta criada com sucesso!");
-    window.location.href = "https://projetointegrado-etec2021.herokuapp.com/index.html";
+    window.location.href = "index.html";
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -93,6 +92,7 @@ function inscreverse(){
   });
 }
 
+<<<<<<< HEAD
 function usuarioLogado(){
     try{
         let u = firebase.auth().currentUser;
@@ -105,8 +105,12 @@ function usuarioLogado(){
 function newPassword(){
   var auth = firebase.auth();
   var email = document.getElementById("emailChange").value;
+=======
+function alterarSenha(){
+  let resetEmail = document.getElementById("resetEmail").value;
+>>>>>>> 933240c0522294c6b5d1b1b3d28ceefe6c060a1f
   
-  auth.sendPasswordResetEmail(email).then(function() {
+  firebase.auth().sendPasswordResetEmail(resetEmail).then(function() {
     // Email sent.
     window.alert("E-mail enviado!");
   }).catch(function(error) {
@@ -114,3 +118,4 @@ function newPassword(){
     window.alert("E-mail incorreto ou não cadastrado!");
   });
 }
+

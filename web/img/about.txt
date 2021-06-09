@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Annie Use Your Telescope
+- Font Author: Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com)
+- Font Source: http://fonts.gstatic.com/s/annieuseyourtelescope/v11/daaLSS4tI2qYYl3Jq9s_Hu74xwktnlKxH6osGVGjlDfB3UUVZA.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
