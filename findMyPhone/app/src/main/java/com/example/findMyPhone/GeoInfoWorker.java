@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -40,45 +41,47 @@ public class GeoInfoWorker extends Worker {
     @Override
     public Result doWork() {
 
-        if (!service.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+        while (!service.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Log.i("=====>", "LOCALIZACAO NAO ATIVADA!!!");
+            //Toast.makeText(this.context, "A localização está desativada, por favor ative para" +
+             //               "  que possamos achar seu celular!!",
+               //     Toast.LENGTH_LONG).show();
             AlertDialog.Builder dialog = new AlertDialog.Builder(this.context);
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             this.context.startActivity(intent);
-        } else {
-            if (ActivityCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_FINE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                Intent intent = new Intent(this.context, MainActivity.class);
-                context.startActivity(intent);
-            }
-            LocationServices.getFusedLocationProviderClient(this.context).getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
-                @Override
-                public void onSuccess(Location location) {
+        }
+        while (ActivityCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent(this.context, MainActivity.class);
+            context.startActivity(intent);
+            Toast.makeText(this.context, "Permita o acesso a localização para o " +
+                                "app funcionar!!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        LocationServices.getFusedLocationProviderClient(this.context).getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
 
-                    Log.i("==$$=$$==>", "public void onSuccess(Location location) {...");
+                Log.i("==$$=$$==>", "public void onSuccess(Location location) {...");
+                if (location != null) {
+
+                    Log.w("%*%*%*%*%*%", "public Result doWork() {...");
+                    FirebaseDataBase.SaveDocument("localization", location.getLatitude(), location.getLongitude());
+
+                } else {
                     if (location != null) {
-
-                        Log.w("%*%*%*%*%*%", "public Result doWork() {...");
-                        FirebaseFeatures.SaveDocument("localization", location.getLatitude(), location.getLongitude());
-
-                        // String strLat = Double.toString(location.getLatitude());
-                        // String strLgn = Double.toString(location.getLongitude());
-
-                    } else {
-                        if (location != null) {
                             Log.i("===>", "Location foi null :((");
-                        }
                     }
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.i("==$$==$$=>", "public void onFailure(@NonNull Exception e) {...");
-                    e.printStackTrace();
-                }
-            });
-        }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i("==$$==$$=>", "public void onFailure(@NonNull Exception e) {...");
+                e.printStackTrace();
+            }
+        });
         return Result.success();
     }
 }

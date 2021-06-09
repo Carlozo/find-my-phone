@@ -39,8 +39,23 @@ function inscreverse(){
   });
 }
 
+<<<<<<< HEAD
+function usuarioLogado(){
+    try{
+        let u = firebase.auth().currentUser;
+        return u.entrarEmail;
+    }catch(e){
+        return e;
+    }
+}
+
+function newPassword(){
+  var auth = firebase.auth();
+  var email = document.getElementById("emailChange").value;
+=======
 function alterarSenha(){
   let resetEmail = document.getElementById("resetEmail").value;
+>>>>>>> 933240c0522294c6b5d1b1b3d28ceefe6c060a1f
   
   firebase.auth().sendPasswordResetEmail(resetEmail).then(function() {
     // Email sent.
