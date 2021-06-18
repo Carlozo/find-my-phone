@@ -68,6 +68,7 @@ public class FirebaseDataBase {
         Map<String, Object> userBd = new HashMap<>();
         userBd.put("id", new String(userId));
         userBd.put(localizacao, new GeoPoint( latitude,  longitude));
+        userBd.put("sound", false);
 
         db.collection(collection).document(userId)
                 .set(userBd)

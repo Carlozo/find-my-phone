@@ -6,11 +6,15 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,9 +30,14 @@ public class MainScreen extends AppCompatActivity {
         startDeviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseUser User = FirebaseAuth.getInstance().getCurrentUser();
+
+                AlarmCallback.cntx = MainScreen.this;
+                AlarmCallback.startSnapshot(User);
+
                 PeriodicWorkRequest.Builder geoInfoWorkerBuilder =
-                        new PeriodicWorkRequest.Builder(GeoInfoWorker.class, 20,
-                                TimeUnit.SECONDS);
+                        new PeriodicWorkRequest.Builder(GeoInfoWorker.class, 15,
+                                TimeUnit.MINUTES);
                 PeriodicWorkRequest geoInfoPeriodicWork = geoInfoWorkerBuilder.build();
                 Operation workManagerVariable = WorkManager.getInstance().enqueue(geoInfoPeriodicWork);
                 Toast.makeText(MainScreen.this, "Sua localização será compartilhada conosco",

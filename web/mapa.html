@@ -25,9 +25,10 @@
         <script src="./js/configFirebaseApp.js"></script>
         <script src="./js/firebaseAuthFeatures.js"></script>
         <script src="./js/configMapBox.js"></script>
+        <script src="./js/firebaseSoundFeature.js"></script>
         
         <!--INICIALIZANDO O BANCO DE DADOS DO FIREBASE-->
-        <script src="./js/configFirebaseDB.js"></script>
+        <scripts src="./js/configFirebaseDB.js"></scripts>
         <!--SCRIPTS DO MAPBOX-->
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
@@ -44,8 +45,10 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li><button class="button">Tocar</button></li>
+                        <li><button class="button" onclick="soundAble()">Tocar</button></li>
+
                         <li><button class="button">Rastrear</button></li>
+
                         <li><button id="sair" class="button sair" onclick="sair()">Sair</button></li>
                     </ul>
                 </div>

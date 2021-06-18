@@ -67,6 +67,10 @@ public class FirebaseCrud extends AppCompatActivity {
                 });
     }
 
+    public static void getUid(){
+
+    }
+
     public static void Logout(){
         FirebaseAuth.getInstance().signOut();
     }
