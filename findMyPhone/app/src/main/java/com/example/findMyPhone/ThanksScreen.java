@@ -18,4 +18,8 @@ public class ThanksScreen extends AppCompatActivity {
         FirebaseCrud.Logout();
         startActivity(new Intent(ThanksScreen.this, MainActivity.class));
     }
+
+    public void Stop(View view){
+        startActivity(new Intent(this,stopForeground.class));
+    }
 }

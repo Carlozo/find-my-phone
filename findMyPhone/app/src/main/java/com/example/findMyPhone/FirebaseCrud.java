@@ -54,21 +54,21 @@ public class FirebaseCrud extends AppCompatActivity {
                             Toast.makeText(FirebaseCrud.this, "Cadastro feito com sucesso",
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
                             startActivity(new Intent(FirebaseCrud.this, MainScreen.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(FirebaseCrud.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
                         }
                     }
                 });
     }
 
-    public static void getUid(){
-
+    public static String getUid(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String Uid = user.getUid();
+        return Uid;
     }
 
     public static void Logout(){

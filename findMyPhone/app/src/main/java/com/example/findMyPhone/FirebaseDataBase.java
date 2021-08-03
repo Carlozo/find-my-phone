@@ -3,6 +3,7 @@ package com.example.findMyPhone;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -47,27 +48,27 @@ import static androidx.core.content.ContextCompat.getSystemService;
 
 public class FirebaseDataBase {
     //Location location = (Location) new LocationServices();
+    private static String userId;
+    private static Context context;
 
     public static void SaveDocument(String collection,double latitude,double longitude) {
 
-        Log.d("#!#!#!#!#", "FirebaseFeatures.SaveDocument(String collection){...");
+        Log.d("====>", "FirebaseFeatures.SaveDocument(String collection)");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        String userId = "";
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             userId = user.getUid();
         } else {
-            // No user is signed in
+            return;
         }
 
         String localizacao = "localizacao";
 
         Map<String, Object> userBd = new HashMap<>();
         userBd.put("id", new String(userId));
-        userBd.put(localizacao, new GeoPoint( latitude,  longitude));
+        userBd.put(localizacao, new GeoPoint(latitude, longitude));
         userBd.put("sound", false);
 
         db.collection(collection).document(userId)

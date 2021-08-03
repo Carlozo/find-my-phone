@@ -8,62 +8,56 @@
     android:backgroundTint="#000000"
     tools:context=".ThanksScreen">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="1000dp"
-        android:layout_height="59dp"
-        android:background="#2C2C2C"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="1000dp"
-        android:layout_height="4dp"
-        android:layout_marginBottom="20dp"
-        android:background="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
     <TextView
         android:id="@+id/logoutText2"
-        android:layout_width="83dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="312dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="640dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="680dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         android:onClick="Logout"
         android:text="Logout"
         android:textColor="#F5FF0000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="684dp"
-        android:layout_height="269dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="14dp"
         android:text="Obrigado por escolher nosso aplicativo, agradecemos a preferência, algumas funcionalidades poderam não funcionar como devido, pois estamos em fase de desenvolvimento, entre em nosso site para poder localizar seu dispositivo, caso algum bug ou mal funcionamento, contacte-nos no seguinte email:         FindMyPhone.support@outlook.com"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoutText2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="388dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="61dp"
+        android:text="Parar localização"
+        android:textSize="20dp"
+        android:onClick="Stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

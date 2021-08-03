@@ -30,13 +30,13 @@ public class AlarmCallback {
 
     public static Context cntx;
 
-    public static void startSnapshot(FirebaseUser User){
+    public static void startSnapshot(Context context, String Uid){
 
-        String userId = User.getUid();
+        cntx = context;
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        final DocumentReference docRef = db.collection("localization").document(userId);
+        final DocumentReference docRef = db.collection("localization").document(Uid);
         docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
 
             @Override
@@ -50,7 +50,7 @@ public class AlarmCallback {
                 if (snapshot != null && snapshot.exists()) {
                     Log.d("Tem coisa aqui:", "Current data: " + snapshot.getData());
                     db.collection("localization")
-                            .whereEqualTo("id",userId)
+                            .whereEqualTo("id",Uid)
                             .whereEqualTo("sound", true)
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -60,10 +60,11 @@ public class AlarmCallback {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             Log.d("Documento puxado: ", document.getId() + " => " + document.getData());
 
+                                            Log.d("===>" ,""+MediaPlayer.create(cntx, R.raw.sound_effect));
                                             MediaPlayer mediaPlayer = MediaPlayer.create(cntx, R.raw.sound_effect); // initialize it here
                                             mediaPlayer.start();
 
-                                            DocumentReference Document = db.collection("localization").document(userId);
+                                            DocumentReference Document = db.collection("localization").document(Uid);
                                             Document
                                                     .update("sound", false)
                                                     .addOnSuccessListener(new OnSuccessListener<Void>() {

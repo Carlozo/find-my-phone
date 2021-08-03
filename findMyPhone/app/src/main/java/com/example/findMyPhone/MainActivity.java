@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
-            startActivity(new Intent(MainActivity.this, MainScreen.class));
+            startActivity(new Intent(MainActivity.this, ThanksScreen.class));
         }
     }
 

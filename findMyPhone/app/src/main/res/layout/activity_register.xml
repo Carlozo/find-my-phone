@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/registerPassword"
-        android:layout_width="238dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="100dp"
@@ -30,8 +30,8 @@
 
     <EditText
         android:id="@+id/registerEmail"
-        android:layout_width="238dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="100dp"
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="167dp"
-        android:layout_height="59dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="123dp"
@@ -88,12 +88,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="149dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="195dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="192dp"
         android:clickable="true"
         android:onClick="changeActivityLogin"
         android:text="Já tenho conta!"
@@ -101,7 +101,6 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
